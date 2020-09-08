@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Segundo Teste</title>
+    <h1>So pra nao deixar em branco fodase</h1>
+</head>
+<body>
+    <form onsubmit="return resultado();" method="POST">
+        <h3>Nome:</h3>
+        <input id="name" type="text" name="name"/>
+
+        <h3>Email:</h3>
+        <input id="email" type="text" name="email"/>
+
+        <h3>Fala ai</h3>
+        <textarea id="comments" name="comments" rows="6" cols="100" placeholder="Digita ai garalho"></textarea>
+        <br/>
+        <br/>
+        <input id="submit" type="submit" value="Manda ai"/>
+
+    </form>
+    <form> 
+        <input id="valor1" type="number" name="x"/><br/>
+        <input id="valor2" type="number" name="y"/><br/>
+        <button onclick="myFunction()">Click me</button><br/>  
+        <output oninput="return myFunction()"></output>
+        <!--<output name="resultado" for="x, y"></output>-->
+    </form>
+    <script>
+        function myFunction() {
+            let valor01 = document.getElementById(parseInt("valor1")).value;
+            let valor02 = document.getElementById(parseInt("valor2")).value;
+            let soma = valor01 + valor02;
+            return soma;
+        }
+    </script>
+</body>
+</html>

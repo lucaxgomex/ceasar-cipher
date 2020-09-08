@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Testing</title>
+</head>
+
+<body oncontextmenu="return false">
+  <h1>Just checking</h1>
+  <div class="body">
+    <div class="grad"></div>
+    <div class="header">
+      <div><b>Please</b>, Type Something:</div>
+    </div>
+    <br>
+    <form name="login">
+      <div>
+        <input type="text" placeholder="Username" name="userid"/><br>
+        <input type="password" placeholder="Password?" name="pswrd"/><br>
+        <input type="button" onclick="check(this.form)" value="Calcular"/><br>
+        <input type="text" placeholder="Resultado:" name="result"/> 
+      </div>
+    </form>
+  </div>
+  <script>
+      function check(form) {
+        if (form.userid.value=="Lucas" && form.pswrd.value=="0") {
+           window.alert("Correct");
+        } else {
+           window.alert("Not Correct");
+        }
+      }
+  </script>
+  
+</body>
+
+</html>
