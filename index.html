@@ -14,13 +14,13 @@
         </div>
         <div class="boxes"> 
             <form name="form" onsubmit="return false">
-                <input type="text" id="string" placeholder="Texto"/>
+                <input type="text" id="string" placeholder="Texto" required>
 
-                <input type="number" id="number" placeholder="Valor"/>
+                <input type="number" id="number" placeholder="Valor" required/>
                 
                 <input type="submit" value="Calcular" onclick="showResult()"/>
 
-                <input type="submit" value="Limpar"/>
+                <input type="submit" value="Limpar" onclick="window.location.reload()"/>
 
                 <input type="text" name="display" placeholder="Resultado"/>
             </form>
