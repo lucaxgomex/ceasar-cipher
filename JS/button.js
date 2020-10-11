@@ -26,7 +26,8 @@ function ceaserCipher(name, rotation) {
             newText = newText.concat(newChar);
         } else {
             if (name.charCodeAt(i) == 32) {
-                newText = newText.concat('#');
+                newChar = String.fromCharCode(name.charCodeAt(i) + 3);
+                newText = newText.concat(newChar);
             } else {
                 newText = newText.concat(name[i]);
             }
@@ -35,7 +36,7 @@ function ceaserCipher(name, rotation) {
     return newText;
 }
 
-let letter = function getLetters(name) {
+const letter = function getLetters(name) {
     var j;
     for (j = 0; j < name.length; j++) {
         if (returnUppercase(name) || returnLowercase(name)) {
