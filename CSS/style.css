@@ -67,6 +67,8 @@ body {
 }
 
 .boxes input[type="submit"] {
+    margin-left: 10px;
+    margin-right: 10    px;
     border: none;
     background: none;
     border: 2px solid #ffffff;
@@ -74,6 +76,8 @@ body {
     outline: none;
     color: white;
     border-radius: 25px;
+    resize: horizontal;
+    width: 100px;
 }
 
 .boxes input[type="submit"]:hover {
