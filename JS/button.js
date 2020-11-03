@@ -24,13 +24,14 @@ function ceaserCipher(name, rotation) {
         if (letter) {
             newChar = String.fromCharCode(name.charCodeAt(i) + rotation);
             newText = newText.concat(newChar);
+        } else if (beyondZ) {
+            newChar = String.fromCharCode((name.charCodeAt(i) - 26) + rotation);
+            newText = newText.concat(newChar);
+        } else if (name.charCodeAt(i) == 32) {
+            newChar = String.fromCharCode(name.charCodeAt(i) + 3);
+            newText = newText.concat(newChar);
         } else {
-            if (name.charCodeAt(i) == 32) {
-                newChar = String.fromCharCode(name.charCodeAt(i) + 3);
-                newText = newText.concat(newChar);
-            } else {
-                newText = newText.concat(name[i]);
-            }
+            newText = newText.concat(name[i]);
         }
     }
     return newText;
@@ -46,18 +47,35 @@ const letter = function getLetters(name) {
             os caracteres da string informada sejam 
             somente letras
             */
-        } else {
-            return false;
+        }
+    }
+}
+
+const beyondZ = function calculateZ(name) {
+    var k;
+    for (k = 0; k < name.length; k++) {
+        if (uppercaseZ(name[k]) || lowercaseZ(name[k])) {
+            return true;
         }
     }
 }
 
 //retorno das letras maiusculas de acordo com a tabela ASCII
 function returnUppercase(name) {
-    return name.charCodeAt(i) >= 97 && name.charCodeAt(i) <= 122;
+    return name.charCodeAt(j) >= 97 && name.charCodeAt(j) <= 122;
 }
 
 //retorno das letras minusculas de acordo com a tabela ASCII
 function returnLowercase(name) {
-    return name.charCodeAt(i) >= 65 && name.charCodeAt(i) <= 90;
+    return name.charCodeAt(j) >= 65 && name.charCodeAt(j) <= 90;
+}
+
+//retorno da letra 'z' 
+function uppercaseZ(name) {
+    return name.charCodeAt() == 122;
+}
+
+//retorno da letra 'Z' 
+function lowercaseZ(name) {
+    return name.charCodeAt() == 90;
 }
